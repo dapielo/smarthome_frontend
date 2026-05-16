@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartHome</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="./js/app.js" type="module"></script>
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <ul>
+                <li class="hidden" id="logout"><a>usuario</a></li>
+                <li><a id="btn-login">Login</a></li>
+                <li><a id="btn-devices">Dispositivos</a></li>
+                <li><a id="btn-add">Añadir</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+    </main>
+
+    <template id="template-login">
+        <h1>Iniciar sesión</h1>
+        <h2 class="error-message"></h2>
+        <form action="" class="form-login">
+                <label for="username">Nombre de usuario: </label>
+                <input type="text" name="username" id="form-username">
+                <label for="password">Contraseña: </label>
+                <input type="password" name="password" id="form-password">
+            <div>    
+                <button type="submit" class="btn btn-ok" id="btn-login-submit">Iniciar sesión</button>
+            </div>
+        </form>
+    </template>
+
+    <template id="template-device">
+        <div class="card">
+            <div>
+                <strong>Nombre: </strong><span class="device-name"></span>
+            </div>
+            <div>
+                <strong>Tipo: </strong><span class="device-type"></span>
+            </div>
+            <div>
+                <strong>Categoria: </strong><span class="device-category"></span>
+            </div>
+            <div>
+                <strong>Ubicación: </strong><span class="device-location"></span>
+            </div>
+            <div>
+                <strong>Marca: </strong><span class="device-brand"></span>
+            </div>
+            <div>
+                <strong>Modelo: </strong><span class="device-model"></span>
+            </div>
+            <div>
+                <strong>Estado: </strong><span class="device-status"></span>
+            </div>
+            <div>
+                <strong>Detalle estado: </strong><span class="device-status-detail"></span>
+            </div>
+            <div>
+                <strong>Creado el: </strong><span class="device-created-at"></span>
+            </div>
+            <div>
+                <strong>Actualizado el: </strong><span class="device-last-updated"></span>
+            </div>
+            <div>
+                <strong>Modificado por: </strong><span class="device-last-modified-by"></span>
+            </div>
+            <div class="contenedor-imagen">
+                <strong>Imagen: </strong><img src="" alt="Imagen">
+            </div>
+            <div class="card-buttons">
+                <button class="btn btn-ok btn-encender">Apagar/Encender</button>
+                <button class="btn btn-ok btn-editar">Editar</button>
+                <button class="btn btn-warn btn-borrar">Borrar dispositivo</button>
+            </div>
+        </div>
+    </template>
+
+    <template id="add-device">
+        <h1>Añadir un nuevo dispositivo</h1>
+        <div id="message-add-form" class="error-message"></div>
+        <form class="form-add-device">
+            <div class="form-add-container">
+                <div class="vertical-container">
+                    <label for="name">Nombre: </label>
+                    <label for="type">Tipo: </label>
+                    <label for="category">Categoria: </label>
+                </div>
+                <div class="vertical-container">
+                    <input type="text" name="name" id="name">
+                    <input type="text" name="type" id="type">
+                    <input type="text" name="category" id="category">
+                </div>
+                <div class="vertical-container">
+                    <label for="location">Ubicación: </label>
+                    <label for="brand">Marca: </label>
+                    <label for="model">Modelo: </label>
+                </div>
+                <div class="vertical-container">
+                    <input type="text" name="location" id="location">
+                    <input type="text" name="brand" id="brand">
+                    <input type="text" name="model" id="model">
+                </div>
+            </div>
+            <div class="image-controlls">
+                <label for="image">Imagen: </label>
+                <input type="file" name="image" id="image">
+            </div>
+            <div class="form-add-buttons">
+                <button type="submit" class="btn btn-ok btn-enviar">Enviar</button>
+                <button type="reset" class="btn btn-warn btn-borrar">Borrar formulario</button>
+            </div>
+        </form>
+    </template>
+
+    <dialog id="dialog-editar">
+        <form class="form-add-device">
+            <div class="form-add-container">
+                <input type="hidden" id="id">
+                <div class="vertical-container">
+                    <label for="name">Nombre: </label>
+                    <label for="type">Tipo: </label>
+                    <label for="category">Categoria: </label>
+                </div>
+                <div class="vertical-container">
+                    <input type="text" name="name" id="name">
+                    <input type="text" name="type" id="type">
+                    <input type="text" name="category" id="category">
+                </div>
+                <div class="vertical-container">
+                    <label for="location">Ubicación: </label>
+                    <label for="brand">Marca: </label>
+                    <label for="model">Modelo: </label>
+                </div>
+                <div class="vertical-container">
+                    <input type="text" name="location" id="location">
+                    <input type="text" name="brand" id="brand">
+                    <input type="text" name="model" id="model">
+                </div>
+            </div>
+            <div class="image-controlls">
+                <label for="image">Imagen: </label>
+                <input type="file" name="image" id="image">
+            </div>
+            <div class="form-add-buttons">
+                <button type="submit" class="btn btn-ok btn-dialog-editar">Enviar</button>
+                <button type="cancel" class="btn btn-warn btn-dialog-cancelar">Cancelar</button>
+            </div>
+        </form>
+    </dialog>
+</body>
+</html>
